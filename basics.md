@@ -77,3 +77,14 @@ We can perform the same sort of operation to calculate the product of all the el
 Prelude> foldr (*) 1 [4, 8, 5]
 160
 ```
+
+## Functions
+
+Functions are central to Haskell, as it is a *functional* programming language. This means that the evaluation of a program is simply the evaluation of a function.
+
+We can write a simple function to square a number, which we define as follows:
+
+```
+square x = x * x
+```
+Here we are defining a function ```square``` that takes one argument which we call x. We say that the *value* of ```square x``` is equal to ```x * x```.
