@@ -42,7 +42,24 @@ msg = 'h' : 'e' : 'l' : 'l' : 'o' : []
 ```
 It is important to note that in Haskell, lists are actually *singly linked lists* and *not* arrays.
 
+## Basic Functions
 
+We can write functions on integers by cases:
+
+```
+factorial :: Integer -> Integer
+factorial 0 = 1
+factorial n = n * factorial (n-1)
+```
+Each clause is checked in order from top to bottom, and the first matching clause is chosen. Choices can also be made based on arbitrary Boolean expressions using **guards**. For example:
+
+```
+hailstone :: Integer -> Integer
+hailstone n
+  | n `mod` 2 == 0 = n `div` 2
+  | otherwise      = 3*n + 1
+```
+Any number of guards can be associated with each clause of a function definition, each of which is a Boolean expression. If the clause’s patterns match, the guards are evaluated in order from top to bottom, and the first one which evaluates to True is chosen. If none of the guards evaluate to True, matching continues with the next clause.
 
 
 
