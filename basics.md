@@ -59,7 +59,23 @@ hailstone n
   | n `mod` 2 == 0 = n `div` 2
   | otherwise      = 3*n + 1
 ```
-Any number of guards can be associated with each clause of a function definition, each of which is a Boolean expression. If the clause’s patterns match, the guards are evaluated in order from top to bottom, and the first one which evaluates to True is chosen. If none of the guards evaluate to True, matching continues with the next clause.
+Any number of guards can be associated with each clause of a function definition, each of which is a Boolean expression. If the clause’s patterns match, the guards are evaluated in order from top to bottom, and the first one which evaluates to ```True``` is chosen. If none of the guards evaluate to ```True```, matching continues with the next clause.
 
+To apply a function to some arguments, just list the arguments after the function, separated by spaces, like this:
+
+```
+f :: Int -> Int -> Int -> Int
+f x y z = x + y + z
+```
+
+We can write functions on lists using *pattern matching*:
+
+```
+intListLength :: [Integer] -> Integer
+intListLength []      = 0
+intListLength (x:xs)  = 1 + intListLength xs
+```
+
+The first clause says that the length of an empty list is 0. The second clause says that if the input list looks like ```(x:xs)```, that is, a first element ```x``` consed onto a remaining list ```xs```, then the length is one more than the length of ```xs```.
 
 
