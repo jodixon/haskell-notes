@@ -11,4 +11,8 @@ data AlgDataType = Constr1 Type11 Type12
 
 This specifies that a value of type AlgDataType can be constructed in one of four ways: using ```Constr1```, ```Constr2```, ```Constr3```, or ```Constr4```. Depending on the constructor used, an ```AlgDataType``` value may contain some other values. For example, if it was constructed using ```Constr1```, then it comes along with two values, one of type ```Type11``` and one of type ```Type12```.
 
+## Patter Matching
+
+Fundamentally, pattern-matching is about taking apart a value by *finding out which constructor* it was built with. This information can be used as the basis for deciding what to do—indeed, in Haskell, this is the *only* way to make a decision.
+
 
