@@ -32,3 +32,17 @@ This is the main idea behind patterns, but there are a few more things to note:
   2. A pattern of the form ```x@pat``` can be used to match a value against the pattern ```pat```, but also give the name          ```x``` to the       entire value being matched.
   3. Patterns can be *nested*.
   
+## Case Expressions
+
+The fundamental construct for doing pattern-matching in Haskell is the ```case``` expression. In general, a ```case``` expression looks like
+
+```
+case exp of
+  pat1 -> exp1
+  pat2 -> exp2
+  ...
+```
+
+When evaluated, the expression ```exp``` is matched against each of the patterns ```pat1```, ```pat2```, … in turn. The first matching pattern is chosen, and the entire case expression evaluates to the expression corresponding to the matching pattern.
+
+In fact, the syntax for defining functions we have seen is really just convenient syntax sugar for defining a case expression
